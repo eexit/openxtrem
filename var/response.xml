@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<acquittementsPatients xmlns="http://www.hprim.org/hprimXML">
+  <enteteMessageAcquittement statut="OK">
+    <identifiantMessage>000221</identifiantMessage>
+    <dateHeureProduction>2011-10-18T23:32:01</dateHeureProduction>
+    <emetteur>
+      <agents>
+        <agent categorie="application">
+          <code>MediBoard</code>
+          <libelle>Gestion des Etablissements de Santé</libelle>
+        </agent>
+        <agent categorie="système">
+          <code>education</code>
+          <libelle>Etablissement Test</libelle>
+        </agent>
+      </agents>
+    </emetteur>
+    <destinataire>
+      <agents>
+        <agent categorie="application">
+          <code>univ20</code>
+        </agent>
+      </agents>
+    </destinataire>
+    <identifiantMessageAcquitte>000000000001</identifiantMessageAcquitte>
+    <observation>
+      <code>I002I008</code>
+      <libelle>Modification du patient terminéeIPP non fourni mais retrouvé</libelle>
+      <commentaire>Patient : 45. Les champs mis à jour sont les suivants : qual_beneficiaire 
+rang_naissance 
+assure_sexe 
+. IPP : 000005.</commentaire>
+    </observation>
+  </enteteMessageAcquittement>
+</acquittementsPatients>

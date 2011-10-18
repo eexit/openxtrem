@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<evenementsPatients xmlns="http://www.hprim.org/hprimXML">
+    <enteteMessage>
+        <identifiantMessage>000000000001</identifiantMessage>
+        <dateHeureProduction>2011-10-18T14:15:00</dateHeureProduction>
+        <emetteur>
+            <agents>
+                <agent categorie="application">
+                    <code>eexit</code>
+                    <libelle>Joris Berthelot</libelle>
+                </agent>
+                <agent categorie="système">
+                    <code>ULR</code>
+                    <libelle>Université La Rochelle</libelle>
+                </agent>
+            </agents>
+        </emetteur>
+        <destinataire>
+            <agents>
+                <agent categorie="application">
+                    <code>MediBoard</code>
+                    <libelle>Gestion des Etablissements de Santé</libelle>
+                </agent>
+            </agents>
+        </destinataire>
+    </enteteMessage>
+    <evenementPatient>
+        <enregistrementPatient action="création">
+            <patient>
+                <identifiant>
+                    <emetteur>
+                        <valeur>221</valeur>
+                    </emetteur>
+                </identifiant>
+                <personnePhysique sexe="M">
+                    <nomUsuel>BERTHELOT</nomUsuel>
+                    <prenoms>
+                        <prenom>Joris</prenom>
+                    </prenoms>
+                    <dateNaissance>
+                        <date>1970-01-01</date>
+                        <heure>10:45:00</heure>
+                    </dateNaissance>
+                </personnePhysique>
+            </patient>
+        </enregistrementPatient>
+    </evenementPatient>
+</evenementsPatients>

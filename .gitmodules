@@ -1,0 +1,9 @@
+[submodule "vendor/symfony/Symfony/Component/ClassLoader"]
+	path = vendor/symfony/Symfony/Component/ClassLoader
+	url = git://github.com/symfony/ClassLoader.git
+[submodule "vendor/symfony/Symfony/Component/Console"]
+	path = vendor/symfony/Symfony/Component/Console
+	url = git://github.com/symfony/Console.git
+[submodule "vendor/zend"]
+	path = vendor/zend
+	url = https://github.com/zendframework/zf2.git
