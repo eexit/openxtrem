@@ -25,9 +25,16 @@ This work is fully inspired of https://github.com/eexit/ulr-sysd-client I develo
                     │   ├── Calculator.php
                     │   └── CreatePatient.php
                     ├── Validator.php
-                    └── WebServiceProvider.php
+                    └── WebServiceProvider.php (need to be configured)
  
 ## Usage ##
+
+Firstly, configure correctly the WebService Auth by editing Icone\Sysd\Soap\Client\Cli\WebServiceProvider.php.
+Set the default username and password if you have and set WebService options like proxy, compression, etc.
+
+All commands have thoses two optional options which override default WebServiceProviver::USERNAME and WebServiceProviver::PASSWORD constants :
+
+    command --username=XXXX --password=XXXX
 
 See application help :
 

@@ -29,6 +29,8 @@ class SendEvent extends Console\Command\Command
     {
         $this->setName('send:event')
              ->setDescription('Sends an event')
+             ->addOption('username', null, InputOption::VALUE_OPTIONAL, 'WebService username')
+             ->addOption('password', null, InputOption::VALUE_OPTIONAL, 'WebService password')
              ->addArgument('eventfile', InputArgument::REQUIRED, 'XML request event file')
              ->addOption('output', null, InputOption::VALUE_OPTIONAL, 'Saves the response as XML file')
              ->addOption('schema', null, InputOption::VALUE_OPTIONAL, 'XSD schema validation');
@@ -39,6 +41,8 @@ class SendEvent extends Console\Command\Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $user = $input->getOption('username');
+        $passwd = $input->getOption('password');
         $event = $input->getArgument('eventfile');
         $out = $input->getOption('output');
         $xsd = $input->getOption('schema');
@@ -83,7 +87,12 @@ class SendEvent extends Console\Command\Command
         try {
             
             // Creates a new WebService instance and call the remote method
-            $client = WebServiceProvider::getInstance('user', 'pwd');
+            if ($user && $passwd) {
+                $client = WebServiceProvider::getInstance($user, $passwd);
+            } else {
+                $client = WebServiceProvider::getInstance();
+            }
+            
             $response = $client->event(utf8_encode(file_get_contents($event)));
             
             // Creates a new DOMDocument file from the WebService response

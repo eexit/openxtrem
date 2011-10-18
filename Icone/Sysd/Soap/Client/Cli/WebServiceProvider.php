@@ -15,9 +15,22 @@ use Zend\Soap\Client as Zend_Client;
  */
 class WebServiceProvider
 {
+    /**
+     * Default username
+     */
+    const USERNAME = 'user';
+    
+    /**
+     * Default password
+     */
+    const PASSWORD = 'passwd';
+    
+    /**
+     * WebService endpoint
+     */
     const URI = 'http://education.openxtrem.com/index.php?login=1&username=%s&password=%s&m=webservices&a=soap_server&wsdl';
     
-    public static function getInstance($user, $password)
+    public static function getInstance($user = self::USERNAME, $password = self::PASSWORD)
     {
         $wsdl = sprintf(self::URI, $user, $password);
         return new Zend_Client($wsdl, $options = array(

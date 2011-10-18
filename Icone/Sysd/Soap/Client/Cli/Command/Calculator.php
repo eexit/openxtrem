@@ -28,6 +28,8 @@ class Calculator extends Console\Command\Command
     {
         $this->setName('calc')
              ->setDescription('Tests the SOAP server')
+             ->addOption('username', null, InputOption::VALUE_OPTIONAL, 'WebService username')
+             ->addOption('password', null, InputOption::VALUE_OPTIONAL, 'WebService password')
              ->addOption('operand', null, InputOption::VALUE_REQUIRED, 'Operation ("add" or "substract")')
              ->addArgument('x', InputArgument::REQUIRED, 'First number')
              ->addArgument('y', InputArgument::REQUIRED, 'Second number');
@@ -38,6 +40,8 @@ class Calculator extends Console\Command\Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $user = $input->getOption('username');
+        $passwd = $input->getOption('password');
         $op = $input->getOption('operand');
         $x = intval($input->getArgument('x'));
         $y = intval($input->getArgument('y'));
@@ -51,7 +55,12 @@ class Calculator extends Console\Command\Command
         try {
             
             // Creates a new WebService instance and call the remote method
-            $client = WebServiceProvider::getInstance('user', 'pwd');
+            if ($user && $passwd) {
+                $client = WebServiceProvider::getInstance($user, $passwd);
+            } else {
+                $client = WebServiceProvider::getInstance();
+            }
+            
             $response = $client->calculatorAuth($op, $x, $y);
             
             // Prints the result
