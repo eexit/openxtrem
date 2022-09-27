@@ -17,7 +17,7 @@ use Icone\Sysd\Soap\Client\Cli\WebServiceProvider;
  * @package Icone\Sysd
  * @subpackage Soap\Client\Cli\Command
  * @copyright Copyright (c) 2011, Joris Berthelot
- * @author Joris Berthelot <joris.berthelot@gmail.com>
+ * @author Joris Berthelot
  */
 class Calculator extends Console\Command\Command
 {

@@ -11,7 +11,7 @@ use Zend\Soap\Client as Zend_Client;
  * @package Icone\Sysd
  * @subpackage Soap\Client\Cli
  * @copyright Copyright (c) 2011, Joris Berthelot
- * @author Joris Berthelot <joris.berthelot@gmail.com>
+ * @author Joris Berthelot
  */
 class WebServiceProvider
 {

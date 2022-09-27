@@ -1,13 +1,13 @@
 # PHP-SOAP Practical Work #
 
 This repos contains my practical work related to our PHP OpenXtrem conference at Uni.
-This work is fully inspired of https://github.com/eexit/ulr-sysd-client I developped 2 days before.
+This work is fully inspired of <https://github.com/eexit/ulr-sysd-client> I developped 2 days before.
 
 ## Requirements ##
 
- * >= PHP 5.3.3
- * SOAP PHP extension
- * DOM PHP extension
+* >= PHP 5.3.3
+* SOAP PHP extension
+* DOM PHP extension
 
 ## Tree ##
 
@@ -26,7 +26,7 @@ This work is fully inspired of https://github.com/eexit/ulr-sysd-client I develo
                     │   └── CreatePatient.php
                     ├── Validator.php
                     └── WebServiceProvider.php (need to be configured)
- 
+
 ## Usage ##
 
 Firstly, configure correctly the WebService Auth by editing Icone\Sysd\Soap\Client\Cli\WebServiceProvider.php.
@@ -54,7 +54,7 @@ Sending an XML event to the WebService :
 Same query but with XML schema validation :
 
     app/client send:event --schema=var/xsd/validationschema.xsd var/creation.xml
-    
+
 Same query but with XML response file saving :
 
     app/client send:event --schema=var/xsd/validationschema.xsd --output=var/response.xml var/creation.xml
@@ -62,6 +62,3 @@ Same query but with XML response file saving :
 ## Information ##
 
 Copyright (c) 2011, Joris Berthelot
-
-Joris Berthelot <joris.berthelot@gmail.com>
-
